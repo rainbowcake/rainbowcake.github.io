@@ -1,6 +1,6 @@
 +++
 title = "Theory"
-weight = 2
+weight = 80
 +++
 
 # Placeholder

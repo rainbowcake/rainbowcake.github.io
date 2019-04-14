@@ -1,6 +1,6 @@
 +++
 title = "Implementation details"
-weight = 3
+weight = 100
 +++
 
 # Placeholder

@@ -3,45 +3,33 @@ baseURL = "/"
 languageCode = "en-us"
 DefaultContentLanguage = "en"
 title = "RainbowCake Documentation"
-theme = "docdock"
+theme = "learn"
 # themesdir = "../.."
-pygmentsCodeFences = true
-pygmentsStyle = "monokailight"
+#pygmentsCodeFences = true
+#pygmentsStyle = "monokailight"
 
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir= false
-enableMissingTranslationPlaceholders = false
+#defaultContentLanguage = "en"
+#defaultContentLanguageInSubdir= false
+#enableMissingTranslationPlaceholders = false
 
 
 [params]
-editURL = "https://github.com/vjeantet/hugo-theme-docdock/edit/master/exampleSite/content/"
-showVisitedLinks = true # default is false
-themeStyle = "flex" # "original" or "flex" # default "flex"
-themeVariant = "" # choose theme variant "green", "gold" , "gray", "blue" (default)
-ordersectionsby = "weight" # ordersectionsby = "title"
-disableHomeIcon = true # default is false
-disableSearch = true # default is false
-disableNavChevron = true # set true to hide next/prev chevron, default is false
-highlightClientSide = false # set true to use highlight.pack.js instead of the default hugo chroma highlighter
-menushortcutsnewtab = true # set true to open shortcuts links to a new tab/window
-enableGitInfo = false
+author = "Márton Braun"
+disableSearch = true
+disableInlineCopyToClipBoard = true
+disableLanguageSwitchingButton = true
+themeVariant = "blue"
 
 [outputs]
-home = [ "HTML", "RSS", "JSON"]
+home = [ "HTML" ]
 
 
 [[menu.shortcuts]]
-pre = "<h3>More</h3>"
-name = "<i class='fa fa-gitlab'></i> <label>GitLab repo</label>"
+name = "<i class='fab fa-gitlab'></i> GitLab repo"
 url = "https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fa fa-gitlab'></i> <label>Sample apps</label>"
+name = "<i class='fab fa-gitlab'></i> Sample apps"
 url = "https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/demos"
 weight = 11
-
-[[menu.shortcuts]]
-name = "<i class='fa fa-bullhorn'></i> <label>Credits</label>"
-url = "/credits"
-weight = 30
