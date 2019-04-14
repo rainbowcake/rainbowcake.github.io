@@ -3,6 +3,8 @@ title = "Navigation"
 weight = 20
 +++
 
+## Basics
+
 Navigation is one of the only responsibilities of the single Activity that the application uses. Its layout is a single `FrameLayout` for Fragments to fill with content, and it implements a `Navigator` interface that performs the appropriate `FragmentManager` calls.
 
 ```kotlin
@@ -26,3 +28,10 @@ And closing the current screen looks like this:
 navigator?.pop()
 ```
 
+## Available methods
+
+TODO
+
+## Animations
+
+TODO

@@ -15,16 +15,18 @@ theme = "learn"
 
 [params]
 author = "Márton Braun"
-disableSearch = true
+disableSearch = false
 disableInlineCopyToClipBoard = true
 disableLanguageSwitchingButton = true
-themeVariant = "blue"
+themeVariant = "green"
+disableShortcutsTitle = true
 
 [outputs]
-home = [ "HTML" ]
+home = [ "HTML", "JSON" ]
 
 
 [[menu.shortcuts]]
+pre = "<h3>Links</h3>"
 name = "<i class='fab fa-gitlab'></i> GitLab repo"
 url = "https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake"
 weight = 10

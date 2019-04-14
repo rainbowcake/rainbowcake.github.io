@@ -1,3 +1,8 @@
++++
+title = "Home"
+weight = 0
++++
+
 # RainbowCake - a modern Android architecture
 
 ## Introduction and overview
