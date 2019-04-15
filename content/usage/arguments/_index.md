@@ -62,7 +62,7 @@ class PurchaseFragment : RainbowCakeFragment<PurchaseViewState, PurchaseViewMode
 
 ## Optional arguments
 
-Optional arguments can be handled very similarly to regular [required arguments](/content/views/required-arguments.md).
+Optional arguments can be handled very similarly to regular arguments.
 
 Only a couple changes have to be made:
 

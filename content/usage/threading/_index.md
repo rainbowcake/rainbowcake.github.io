@@ -32,7 +32,7 @@ class UserPresenter @Inject constructor() {
 }
 ```
 
-This ensures that any code below the presenters runs on background threads. If needed, additional dispatcher changes can be performed in lower layers. Read more [here](/content/concepts/threading.md).
+This ensures that any code below the presenters runs on background threads. If needed, additional dispatcher changes can be performed in lower layers. Read more about this [in the theory section](/theory/threading/).
 
 ![Architecture threading overview](/images/arch_threading.png)
 

@@ -1,7 +1,9 @@
 +++
-title = "Mapping code style"
+title = "Mapping"
 weight = 20
 +++
+
+### Code style
 
 For collections of elements, using the standard library [`map`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/map.html) function is recommended, with explicit arguments, all on new lines. The lambda argument may be named, but the implicit `it` name is also acceptable in these trivial situations.
 
@@ -51,7 +53,7 @@ fun getRecipientById(recipientId: Long): Recipient? {
 }
 ```
 
-## Mapping extensions
+### Mapping extensions
 
 Especially when encountering duplicated mapping code, like shown above with a "get all" and a "get by ID" function that return the same type, it should be extracted to a separate file, in the form of extension functions. For the above example, the following would be placed in a `Mapping.kt` file:
 

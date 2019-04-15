@@ -13,4 +13,4 @@ Data sources must not expose these internal models, however. They may only retur
 
 Finally, each screen gets its own presentation models. These are nested data classes in the presenters. Presenters create these from the domain models returned by the interactors they call.
 
-Read more about [models](/content/concepts/models.md) and [mapping code style](/content/datasources#mapping-code-style).
+Read more about [models](/theory/models/) and [mapping code style](/usage/mapping/).

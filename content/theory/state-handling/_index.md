@@ -5,7 +5,7 @@ weight = 20
 
 Each screen (or view) in the application is a Fragment. (Activity based screens are also technically supported, but this documentation will focus on Fragments, as that's the recommended approach.) The `RainbowCakeFragment` class provides integration with dependency injection to grab the appropriate ViewModel for a given Fragment. It also connects to and disconnects from the ViewModel automatically, and receives state changes and events.
 
-View states may be created in one of two ways, either as [sealed classes](/content/viewstate/sealed-class.md) or just [data classes](/content/viewstate/data-class.md). Most of the time, the former is necessary, the latter will only work for very simple cases.
+View states may be created in one of two ways, either as [sealed classes](/usage/viewstate/#sealed-class-view-states) or just [data classes](/usage/viewstate/#data-class-view-state-implementations). Most of the time, the former of these is necessary - the latter will only work for very simple screens.
 
 For this section, we'll look at a simple screen that loads a user profile, displaying a username and profile image. Here's the sealed class representing our view state:
 

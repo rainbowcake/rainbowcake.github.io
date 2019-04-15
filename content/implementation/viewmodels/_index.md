@@ -58,7 +58,7 @@ abstract class RainbowCakeViewModel<VS : Any>(initialState: VS) : ViewModel() {
 ```
 
 - `_state` is a private backing property that holds the `MutableLiveData` wrapping the state. This is never accessed directly, other than inside the initializer block that sets it to `initialState` at construction time, which means that `_state` never holds a `null` value, it's always initialized to a valid state.
-- `state` is a public property that exposes `_state` through the read-only `LiveData` interface for the `RainbowCakeFragment` to observe. It also calls the `distinct` extension on it, which prevents the `LiveData` from emitting the exact same state twice ([see here](/content/viewstate/distinct.md)).
+- `state` is a public property that exposes `_state` through the read-only `LiveData` interface for the `RainbowCakeFragment` to observe. It also calls the `distinct` extension on it, which prevents the `LiveData` from emitting the exact same state twice ([see here](/usage/viewstate/#distinct-states-only-equalsmatters)).
 - `viewState` is a convenience property that lets subclasses of `RainbowCakeViewModel` read and write the current state without having to know that it's stored in a `LiveData`.
 
 This state is then trivially observed in the `RainbowCakeFragment`'s `onViewCreated` method, and delegated to the `render` method that subclasses must override:

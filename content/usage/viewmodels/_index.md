@@ -3,7 +3,7 @@ title = "ViewModels"
 weight = 20
 +++
 
-#  About `execute`
+##  About `execute`
 
 The `execute` method from `JobViewModel` is used to launch a coroutine on the UI thread with the appropriate `CoroutineContext` in ViewModels.
 
@@ -64,11 +64,11 @@ execute(blocking = false) {
 
 There are some variants of the regular `execute` method for special use cases.
 
-##### `executeNonBlocking`
+#### `executeNonBlocking`
 
 This is a convenience method that's exactly equivalent to calling `execute` with the `blocking = false` parameter.
 
-##### `executeCancellable`
+#### `executeCancellable`
 
 This method is the exact same as the `execute` method, except it returns the `Job` that it has started, which enables ViewModel code to manually cancel it, if necessary. The regular `execute` method has a `Unit` return value, since most of the time it's supposed to be used with an expression body ViewModel function, which would leak the `Job` to the Fragment by default:
 
@@ -89,7 +89,25 @@ fun load() {
 }
 ```
 
-### Dagger integration for ViewModels
+### ViewModel error handling
+
+Any exceptions that happen inside `execute` calls that aren't caught will be, by default, caught by the `execute` function. These are logged by default. Job cancellation exceptions (these happen when the `ViewModel` is cleared and the job is cancelled as a consequence) are logged separately.
+
+```kotlin
+try {
+    task() // the lambda passed to `execute`
+} catch (e: CancellationException) {
+    log("Job cancelled exception:")
+    log(e)
+} catch (e: Exception) {
+    log("Unhandled exception in ViewModel:")
+    log(e)
+}
+```
+
+This behaviour can be modified by changing the framework's configuration, as described [here](/usage/configuration/).
+
+## Dagger integration for ViewModels
 
 ViewModels are injected into Fragments via Dagger. For the injection mechanism to know about a given ViewModel, it has to be declared in a Dagger module, conventionally named `ViewModelModule`:
 
@@ -112,27 +130,9 @@ abstract class ViewModelModule {
 
 Each binding requires an abstract function that takes the given specific ViewModel as a parameter, and is annotated with `@ViewModelKey`, with the same ViewModel class specified in the annotation as the key. Their return type always has to be the base `ViewModel` type. This is called a *multibinding*, see the [references](#references) to learn more about them.
 
-##### Data fetch choices
+## Data fetch choices
 
 While ViewModels are able to hold their state through various configuration changes while the screen is still active, it still has to be decided when this state is loaded and reloaded. Here are two common options you may want to use:
 
 - Reload state every time the Fragment attached to the `ViewModel` becomes visible. The convention for doing this is to define a `load` method in the ViewModel (this might take parameters, such as the `Fragment`'s arguments), and call this in the `Fragment`'s `onStart` method. This is practical when you want the `Fragment` to show up-to-date state even when it becomes visible after navigating back to it from another screen, which may have modified data it needs to displays.
 - Load state once and hold onto it for the entire lifetime of the `Fragment` (of course, updates triggered by user input may still modify the state). This is best done by fetching the state in the `ViewModel`'s initializer block (`init`). This approach is useful if fetching the data to display is an expensive operation, or would always fetch the same data anyway.
-
-# ViewModel error handling
-
-Any exceptions that happen inside `execute` calls that aren't caught will be, by default, caught by the `execute` function. These are logged by default. Job cancellation exceptions (these happen when the `ViewModel` is cleared and the job is cancelled as a consequence) are logged separately.
-
-```kotlin
-try {
-    task() // the lambda passed to `execute`
-} catch (e: CancellationException) {
-    log("Job cancelled exception:")
-    log(e)
-} catch (e: Exception) {
-    log("Unhandled exception in ViewModel:")
-    log(e)
-}
-```
-
-This behaviour can be modified by changing the framework's configuration, as described [here](/content/concepts/configuration.md).

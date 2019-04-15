@@ -43,5 +43,3 @@ class DataFragment : RainbowCakeFragment<DataViewState, DataViewModel>() {
     }    
 }
 ```
-
-For details about events, read more [here](/content/viewmodels/events.md).

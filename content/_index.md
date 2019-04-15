@@ -36,4 +36,4 @@ Core technologies used:
 
 ### A grain of salt
 
-This architecture concept and this guide isn't gospel. What's being described here is the full capabilities of the architecture and some design recommendations that are known to work well with it. If your specific application's needs require you to deviate from this, please do. Read more [here](/content/concepts/simplification-opportunities.md).
+This architecture concept and this guide isn't gospel. What's being described here is the full capabilities of the architecture and some design recommendations that are known to work well with it. If your specific application's needs require you to deviate from this, please do. Read more [here](/theory/simplification/).
