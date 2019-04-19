@@ -3,7 +3,7 @@
   command = "hugo"
 
 [[redirects]]
-  from = "http://rainbowcake.netlify.com/*"
-  to = "http://rainbowcake.dev/:splat"
-  status = 302
+  from = "https://rainbowcake.netlify.com/"
+  to = "https://rainbowcake.dev/"
+  status = 200
   force = true
