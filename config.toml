@@ -2,7 +2,7 @@ baseURL = "/"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "RainbowCake Documentation"
+title = "RainbowCake"
 theme = "learn"
 # themesdir = "../.."
 #pygmentsCodeFences = true
