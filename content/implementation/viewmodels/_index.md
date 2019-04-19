@@ -3,7 +3,7 @@ title = "ViewModels"
 weight = 10
 +++
 
-## Job cancellation
+### Job cancellation
 
 Internally, the `execute` method calls the `launch` coroutine builder to fire off a coroutine Job. The scope for these coroutines will be the ViewModel itself, as `JobViewModel` implements the `CoroutineScope` interface.
 
@@ -32,7 +32,7 @@ override fun onCleared() {
 
 Cancelling the `rootJob` will also cancel all of its child coroutines, which in this case is every coroutine launched with the `execute` method. Note that coroutine cancellation is cooperative. Blocking code running inside the coroutine will not be cancelled. Cancellation can only happen in suspending functions, and only if it's handled explicitly. An example of this can be found in the "Retrofit and coroutine adapters" section below.
 
-## Render mechanism
+### Render mechanism
 
 The render mechanism is implemented in the `RainbowCakeViewModel` and `RainbowCakeFragment` classes. Here's the relevant part of `RainbowCakeViewModel`:
 
@@ -58,7 +58,7 @@ abstract class RainbowCakeViewModel<VS : Any>(initialState: VS) : ViewModel() {
 ```
 
 - `_state` is a private backing property that holds the `MutableLiveData` wrapping the state. This is never accessed directly, other than inside the initializer block that sets it to `initialState` at construction time, which means that `_state` never holds a `null` value, it's always initialized to a valid state.
-- `state` is a public property that exposes `_state` through the read-only `LiveData` interface for the `RainbowCakeFragment` to observe. It also calls the `distinct` extension on it, which prevents the `LiveData` from emitting the exact same state twice ([see here](/usage/viewstate/#distinct-states-only-equalsmatters)).
+- `state` is a public property that exposes `_state` through the read-only `LiveData` interface for the `RainbowCakeFragment` to observe. It also calls the `distinct` extension on it, which prevents the `LiveData` from emitting the exact same state twice ([see here](/features/viewstate/#distinct-states-only-equalsmatters)).
 - `viewState` is a convenience property that lets subclasses of `RainbowCakeViewModel` read and write the current state without having to know that it's stored in a `LiveData`.
 
 This state is then trivially observed in the `RainbowCakeFragment`'s `onViewCreated` method, and delegated to the `render` method that subclasses must override:
@@ -75,7 +75,7 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 }
 ```
 
-## Factory and DI setup
+### Factory and DI setup
 
 #### One Factory to rule them all
 
@@ -172,7 +172,7 @@ override fun provideViewModel(): ProfileViewModel {
 The `getViewModelFromFactory` method we actually use essentially performs this same call, with some extra handling for shared `ViewModel` scopes.
 
 
-## References
+### References
 
 For more about Dagger bindings and multibindings, see [here](https://proandroiddev.com/dagger-2-annotations-binds-contributesandroidinjector-a09e6a57758f) and [here](https://google.github.io/dagger/multibindings.html), for example.
 
@@ -181,3 +181,13 @@ The `ViewModelProvider.Factory` implementation is originally from a Google sampl
 The reasoning for using a `SupervisorJob` (as well as other good coroutine tips) is laid out nicely [in this article](https://proandroiddev.com/kotlin-coroutines-patterns-anti-patterns-f9d12984c68e).
 
 The job cancellation approach is also based on the "How to cancel a coroutine" section of [this blog post](https://proandroiddev.com/android-coroutine-recipes-33467a4302e9).
+
+
+
+### More details
+
+TODO: why is the view lifecycle being used for LiveData observation
+
+https://medium.com/@BladeCoder/architecture-components-pitfalls-part-1-9300dd969808
+
+https://github.com/googlesamples/android-architecture-components/issues/47

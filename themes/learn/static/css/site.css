@@ -21,3 +21,25 @@ body {
 #header a {
   color: #FFF !important;
 }
+
+.small-subtitle {
+  font-size: 0.9em;
+  margin: -40px auto 2.5rem auto;
+  font-style: italic;
+  text-align: center;
+}
+
+#body-inner a {
+  display: initial !important;
+  -webkit-transition: text-decoration 5s ease;
+  -moz-transition: text-decoration 5s ease;
+  -ms-transition: text-decoration 5s ease;
+  transition: text-decoration 5s ease;
+}
+#body-inner a:hover {
+  text-decoration: underline !important;
+  -webkit-transition: text-decoration 5s ease;
+  -moz-transition: text-decoration 5s ease;
+  -ms-transition: text-decoration 5s ease;
+  transition: text-decoration 5s ease;
+}

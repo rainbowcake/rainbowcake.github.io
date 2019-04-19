@@ -48,7 +48,6 @@ body {
     display: inline-block;
 }
 #body a.highlight:after {
-    display: block;
     content: "";
     height: 1px;
     width: 0%;

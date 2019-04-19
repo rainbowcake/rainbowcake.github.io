@@ -1,6 +1,6 @@
 +++
 title = "Implementation details"
-weight = 100
+weight = 50
 chapter = true
 pre = "<b>3. </b>"
 +++

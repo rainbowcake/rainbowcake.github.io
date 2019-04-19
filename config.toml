@@ -32,6 +32,11 @@ url = "https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cak
 weight = 10
 
 [[menu.shortcuts]]
+name = "<i class='fab fa-gitlab'></i> Android Studio Templates"
+weight = 20
+url = "https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake-templates"
+
+[[menu.shortcuts]]
 name = "<i class='fab fa-gitlab'></i> Sample apps"
 url = "https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/demos"
-weight = 11
+weight = 30
