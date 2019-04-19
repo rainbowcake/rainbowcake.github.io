@@ -1,9 +1,3 @@
 [build]
   publish = "public"
-  command = "hugo"
-
-[[redirects]]
-  from = "https://rainbowcake.netlify.com/"
-  to = "https://rainbowcake.dev/"
-  status = 200
-  force = true
+  command = "hugo && cp _redirects public/_redirects"
