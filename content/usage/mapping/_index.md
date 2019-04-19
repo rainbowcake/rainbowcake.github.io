@@ -58,7 +58,7 @@ fun getRecipientById(recipientId: Long): Recipient? {
 Especially when encountering duplicated mapping code, like shown above with a "get all" and a "get by ID" function that return the same type, it should be extracted to a separate file, in the form of extension functions. For the above example, the following would be placed in a `Mapping.kt` file:
 
 ```kotlin
-fun RoomRecipient.toDomainRecipient =  Recipient(
+fun RoomRecipient.toDomainRecipient() = Recipient(
          id = it.id,
          name = it.name,
          zipCode = it.zipCode,
