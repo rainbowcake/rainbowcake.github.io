@@ -38,13 +38,12 @@ body {
     color: #323232 !important;
 }
 
-#body a.highlight, #body a.highlight:hover, #body a.highlight:focus {
-    text-decoration: none;
+#body-inner a.highlight, #body-inner a.highlight:hover, #body-inner a.highlight:focus {
+    text-decoration: underline;
     outline: none;
     outline: 0;
 }
 #body a.highlight {
-    line-height: 1.1;
     display: inline-block;
 }
 #body a.highlight:after {

@@ -26,7 +26,6 @@ home = [ "HTML", "JSON" ]
 
 
 [[menu.shortcuts]]
-pre = "<h3>Links</h3>"
 name = "<i class='fab fa-gitlab'></i> GitLab repo"
 url = "https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake"
 weight = 10

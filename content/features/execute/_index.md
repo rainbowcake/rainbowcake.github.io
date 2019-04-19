@@ -5,7 +5,7 @@ weight = 10
 
 <div class="small-subtitle">rainbowcake-core</div>
 
-The `execute` method from `JobViewModel` is used to launch a coroutine on the UI thread with the appropriate `CoroutineContext` in ViewModels.
+The `execute` method from `JobViewModel` is used to launch a coroutine on the UI thread with the appropriate `CoroutineScope` in ViewModels.
 
 A basic example of this:
 
@@ -16,8 +16,8 @@ class UserViewModel @Inject constructor(
     
     fun loadUser(id: String) = execute {
         // This code passed to `execute` is in a coroutine, and can call
-        // suspending methods of the Presenter. It can also update the
-        // viewState, as it's on the UI thread at this level.
+        // suspending methods of the Presenter. It can also update the viewState,
+        // as it's on the UI thread at this level of the call stack.
         viewState = UserLoaded(userPresenter.getUser(id))
     }
     

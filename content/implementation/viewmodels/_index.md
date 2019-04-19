@@ -8,7 +8,8 @@ weight = 10
 Internally, the `execute` method calls the `launch` coroutine builder to fire off a coroutine Job. The scope for these coroutines will be the ViewModel itself, as `JobViewModel` implements the `CoroutineScope` interface.
 
 ```kotlin
-abstract class JobViewModel<VS : Any>(initialState: VS) : RainbowCakeViewModel<VS>(initialState), CoroutineScope {
+abstract class JobViewModel<VS : Any>(initialState: VS) 
+    : RainbowCakeViewModel<VS>(initialState), CoroutineScope {
 
     private val rootJob: Job = SupervisorJob()
 
@@ -102,7 +103,8 @@ This may seem redundant, but keep in mind that generally speaking, when using mu
 abstract class RainbowCakeModule {
 
     @Binds
-    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
+    abstract fun bindViewModelFactory(factory: ViewModelFactory)
+        : ViewModelProvider.Factory
 
 }
 ```
@@ -165,7 +167,8 @@ We could now fetch our `ViewModel` in our concrete `Fragment`s like this, and if
 
 ```kotlin
 override fun provideViewModel(): ProfileViewModel {
-    return ViewModelProviders.of(this, viewModelFactory).get(ProfileViewModel::class)
+    return ViewModelProviders.of(this, viewModelFactory)
+                             .get(ProfileViewModel::class)
 }
 ``` 
 

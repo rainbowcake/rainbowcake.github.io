@@ -26,18 +26,6 @@
     font-style: normal;
     font-weight: 200;
 }
-@font-face {
-    font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: url("../fonts/Work_Sans_300.eot?#iefix") format("embedded-opentype"), url("../fonts/Work_Sans_300.woff") format("woff"), url("../fonts/Work_Sans_300.woff2") format("woff2"), url("../fonts/Work_Sans_300.svg#WorkSans") format("svg"), url("../fonts/Work_Sans_300.ttf") format("truetype");
-}
-@font-face {
-    font-family: 'Work Sans';
-    font-style: normal;
-    font-weight: 500;
-    src: url("../fonts/Work_Sans_500.eot?#iefix") format("embedded-opentype"), url("../fonts/Work_Sans_500.woff") format("woff"), url("../fonts/Work_Sans_500.woff2") format("woff2"), url("../fonts/Work_Sans_500.svg#WorkSans") format("svg"), url("../fonts/Work_Sans_500.ttf") format("truetype");
-}
 body {
     background: #fff;
     color: #777;
@@ -65,7 +53,7 @@ pre {
     position: relative;
 }
 pre {
-  overflow: auto;
+  overflow: scroll;
   -ms-word-wrap: normal;
   word-wrap: normal;
   overflow-wrap: normal;
@@ -450,28 +438,31 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     font-size: 1.2rem;
 }
 #footer {
-    padding: 3rem 1rem;
+    padding: 1rem;
     color: #b3b3b3;
     font-size: 13px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 #footer p {
     margin: 0;
 }
 body {
-    font-family: "Segoe UI", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Segoe UI", "Arial", sans-serif;
     font-weight: 300;
     line-height: 1.6;
     font-size: 18px !important;
 }
 h2, h3, h4, h5, h6 {
-    font-family: "Segoe UI", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Segoe UI", "Arial", sans-serif;
     text-rendering: optimizeLegibility;
     color: #5e5e5e;
     font-weight: 400;
     letter-spacing: -1px;
 }
 h1 {
-    font-family: "Novacento Sans Wide", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Novacento Sans Wide", "Arial", sans-serif;
     text-align: center;
     text-transform: uppercase;
     color: #222;
@@ -812,7 +803,7 @@ td {
     z-index: 1000000;
     display: none;
     padding: 5px 8px;
-    font: normal normal 11px/1.5 "Tahoma", "Geneva", "Arial", sans-serif;
+    font: normal normal 11px/1.5 "Tahoma", "Arial", sans-serif;
     color: #fff;
     text-align: center;
     text-decoration: none;
@@ -1086,6 +1077,7 @@ td {
 }
 pre .copy-to-clipboard {
     position: absolute;
+    display: none;
     right: 10px;
     top: 10px;
     background-color: rgba(116, 181, 89, 0.5);
@@ -1131,7 +1123,7 @@ pre .copy-to-clipboard:hover {
 }
 
 #sidebar #shortcuts h3 {
-    font-family: "Segoe UI", "Novacento Sans Wide", "Tahoma", "Geneva", "Arial", sans-serif;
+    font-family: "Segoe UI", "Arial", sans-serif;
     color: white ;
     margin-top:1rem;
     padding-left: 1rem;
