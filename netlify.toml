@@ -1,0 +1,9 @@
+[build]
+  publish = "public"
+  command = "hugo"
+
+[[redirects]]
+  from = "http://rainbowcake.netlify.com/*"
+  to = "http://rainbowcake.dev/:splat"
+  status = 302
+  force = true
