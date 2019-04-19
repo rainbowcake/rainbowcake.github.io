@@ -1,5 +1,5 @@
 +++
-title = "ViewModel"
+title = "ViewModels"
 weight = 10
 +++
 

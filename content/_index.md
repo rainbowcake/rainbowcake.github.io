@@ -3,20 +3,21 @@ title = "Home"
 weight = 0
 +++
 
-# RainbowCake - a modern Android architecture
+# RainbowCake
+#### _<p align="center">A modern Android architecture</p>_
 
-## Introduction and overview
+<br/>
 
-This is the documentation of the RainbowCake architecture concept and implementation, based on Kotlin languages features and the Google Jetpack libraries.
+This is the documentation of the RainbowCake architecture concept for Android application. RainbowCake relies heavily on Kotlin languages features and the Google Jetpack libraries.
 
-The goals of this architecture as of now:
+The main goals of this architecture:
 
-- Clearly separate concerns between different layers and components
-- Always keep views in a safe and consistent state with ViewModels
-- In addition to a consistent state, also enable emitting one-time events from these ViewModels (alerts, navigation, error messages) for the views to display
-- Handle configuration changes (and even process death) gracefully
-- Make offloading work to background threads easy and avoid callbacks
-- Provide Fragment-based navigation with argument passing between screens in a single Activity
+- Clearly separate concerns between different layers and components,
+- Always keep views in a safe and consistent state with ViewModels,
+- Handle configuration changes (and even process death) gracefully,
+- Make offloading work to background threads trivial,
+- Provide Fragment-based navigation with argument 
+passing between screens in a single Activity.
 
 ![Architecture overview](/images/arch_overview.png)
 

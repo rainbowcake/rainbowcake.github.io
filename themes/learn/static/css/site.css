@@ -1,0 +1,23 @@
+
+#body img {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto !important;
+}
+
+body {
+  font-weight: 400 !important;
+}
+
+#sidebar {
+  font-weight: 400 !important;
+}
+
+#header {
+  font-family: "Segoe UI", sans-serif !important;
+  font-size: 2.5em !important;
+  color: #FFF !important;
+}
+#header a {
+  color: #FFF !important;
+}
