@@ -33,12 +33,12 @@ body {
 body #chapter h1 {
     font-size: 3.5rem;
 }
-@media only all and (min-width: 48em) and (max-width: 59.938em) {
+@media only all and (min-width: 48em) and (max-width: 90.9090em) {
     body #chapter h1 {
         font-size: 3rem;
     }
 }
-@media only all and (max-width: 47.938em) {
+@media only all and (max-width: 64.6464em) {
     body #chapter h1 {
         font-size: 2rem;
     }
@@ -165,7 +165,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #sidebar-toggle-span {
     display: none;
 }
-@media only all and (max-width: 47.938em) {
+@media only all and (max-width: 64.6464em) {
     #sidebar-toggle-span {
         display: inline;
     }
@@ -347,13 +347,13 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
 #body .padding {
     padding: 3rem 6rem;
 }
-@media only all and (max-width: 59.938em) {
+@media only all and (max-width: 90.9090em) {
     #body .padding {
         position: static;
         padding: 15px 3rem;
     }
 }
-@media only all and (max-width: 47.938em) {
+@media only all and (max-width: 64.6464em) {
     #body .padding {
         padding: 5px 1rem;
     }
@@ -362,7 +362,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     margin-top: -1.7rem;
     margin-bottom: 3rem;
 }
-@media only all and (max-width: 59.938em) {
+@media only all and (max-width: 90.9090em) {
     #body #navigation {
         position: static;
         margin-right: 0 !important;
@@ -386,7 +386,7 @@ textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[typ
     vertical-align: middle;
     text-align: center;
 }
-@media only all and (max-width: 59.938em) {
+@media only all and (max-width: 90.9090em) {
     #body .nav {
         display: table-cell;
         position: static;
@@ -751,7 +751,7 @@ td {
 .two-column-bullet {
     width: 50%;
 }
-@media only all and (max-width: 47.938em) {
+@media only all and (max-width: 64.6464em) {
     .two-column-bullet {
         width: 100%;
     }
@@ -759,7 +759,7 @@ td {
 .three-column-bullet {
     width: 33.33333%;
 }
-@media only all and (max-width: 47.938em) {
+@media only all and (max-width: 64.6464em) {
     .three-column-bullet {
         width: 100%;
     }
@@ -767,7 +767,7 @@ td {
 .four-column-bullet {
     width: 25%;
 }
-@media only all and (max-width: 47.938em) {
+@media only all and (max-width: 64.6464em) {
     .four-column-bullet {
         width: 100%;
     }
@@ -1016,7 +1016,7 @@ td {
 #body #breadcrumbs span {
     padding: 0 0.1rem;
 }
-@media only all and (max-width: 59.938em) {
+@media only all and (max-width: 90.9090em) {
     #sidebar {
         width: 230px;
     }
@@ -1024,7 +1024,7 @@ td {
         margin-left: 230px;
     }
 }
-@media only all and (max-width: 47.938em) {
+@media only all and (max-width: 64.6464em) {
     #sidebar {
         width: 230px;
         left: -230px;

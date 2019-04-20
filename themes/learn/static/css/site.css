@@ -15,11 +15,17 @@ body {
 
 #header {
   font-family: "Segoe UI", sans-serif !important;
-  font-size: 2.5em !important;
   color: #FFF !important;
+  font-size: 2.8em !important;
 }
 #header a {
   color: #FFF !important;
+}
+
+@media only all and (max-width: 90.9090em) {
+  #header {
+    font-size: 2em !important;
+  }
 }
 
 .small-subtitle {
