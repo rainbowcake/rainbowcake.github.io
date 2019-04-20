@@ -31,4 +31,4 @@ Finally, why do we do this in the Presenter? For one, they're screen specific, a
 
 For more why mapping is important, read [this excellent article by Joe Birch](https://overflow.buffer.com/2017/12/21/even-map-though-data-model-mapping-android-apps/).
 
-You may also want to take a look at the [mapping code style](/features/mapping/) section.
+You may also want to take a look at the [mapping code style](/best-practices/mapping-code-style/) section.
