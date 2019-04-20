@@ -1,6 +1,6 @@
 +++
-title = "execute"
-weight = 10
+title = "ViewModel execute"
+weight = 20
 +++
 
 <div class="small-subtitle">rainbowcake-core</div>
