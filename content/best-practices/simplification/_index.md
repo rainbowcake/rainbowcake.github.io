@@ -31,4 +31,10 @@ There are two recommended ways of reducing the mapping work necessary:
 
 ### Skipping a layer
 
-TODO
+When there's little formatting to perform before displaying your data, or your application has very little client side business logic, it might not make sense to build out all the layers described in the architecture. You might end up with methods in each layers just calling into the corresponding method in the next layer, and doing nothing else.
+
+There is a recommended shortcut to take, but feel free to come up with your own as well.
+
+1. **Merging presenters and interactors.** This will bring two major changes in responsibilities and structure. It will make moving to the background thread the Interactor's duty, so all of the methods in its public interface should now start with a `withIOContext` call. The other change is that these Interactors, unlike Presenters, can be shared between different ViewModels.
+
+    ![Merging presenters and interactors.](/images/simplification_no_presenters.png)
