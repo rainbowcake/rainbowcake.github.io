@@ -65,8 +65,8 @@ The issue with using this lifecycle is that a Fragment's view may be recreated a
 We could attempt to fix this by starting observation in the `onViewCreated` method instead, like so:
 
 ```kotlin
-override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
+override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
 
     viewModel.state.observe(this, Observer { ... })
 }
