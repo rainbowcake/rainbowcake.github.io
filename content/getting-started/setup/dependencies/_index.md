@@ -5,7 +5,13 @@ weight = 10
 
 The framework is available in multiple artifacts - four, for now. This lets you pick and choose the features that you need in your project instead of having to pull in everything at once.
 
-The currently available artifacts are:
+The currently available artifacts are listed below - you can get them all from MavenCentral.
+
+```groovy
+repositories {
+    mavenCentral()
+}
+```
 
 #### Core
 
