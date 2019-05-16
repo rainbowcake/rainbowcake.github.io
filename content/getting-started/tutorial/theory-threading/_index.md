@@ -7,7 +7,7 @@ We're going to be using coroutines as our threading solution. But how exactly ar
 
 ![Threading between the layers](/images/arch_threading.png)
 
-ViewModels start coroutines when Fragments call them. They start these in the UI dispatcher (i.e. on the UI thread), so that they can easily set the state in the `LiveData` they're be storing.
+ViewModels start coroutines when Fragments call them. They start these in the UI dispatcher (i.e. on the UI thread), so that they can easily set the state in the `LiveData` they're storing.
 
 As soon as calls hit the Presenter layer, they'll be moved to the IO dispatcher, and everything below this point runs on a background threadpool. This means that in the lower layers we may perform blocking calls freely, because they'll just block one of these background threads.
 
