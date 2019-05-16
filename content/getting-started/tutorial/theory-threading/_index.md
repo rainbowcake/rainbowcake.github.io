@@ -11,8 +11,6 @@ ViewModels start coroutines when Fragments call them. They start these in the UI
 
 As soon as calls hit the Presenter layer, they'll be moved to the IO dispatcher, and everything below this point runs on a background threadpool. This means that in the lower layers we may perform blocking calls freely, because they'll just block one of these background threads.
 
-![Architecture threading overview](/images/arch_threading.png)
-
 One approach may be to make all calls from the Presenter downwards blocking, and this is the easiest thing to do. Just write non-suspending functions in the Interactors and in the Data sources - this shouldn't be hard, as most APIs are blocking by default. If you do this, you'll only be using coroutines to easily hop between the UI and IO threads. 
 
 However, if you want, you can propagate the suspending nature of these calls down into the lower layers. You just need to mark the functions along the way with the `suspend` keyword, through the Interactors, and in the Data sources. If you do this, the lower layers will be aware that they are running inside coroutines. What are the benefits of this?
