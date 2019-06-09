@@ -11,7 +11,7 @@ The `RainbowCakeFragment` base class provides integration with dependency inject
 
 View states may be created in one of two ways, either as [sealed classes](/features/viewstate/#sealed-class-view-states) or just [data classes](/features/viewstate/#data-class-view-state-implementations). Most of the time, the former of these is necessary - the latter will only work for very simple screens.
 
-_The [screen template](https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake-templates#screen-template) for the architecture can generate both styles for you._
+_The [screen template](https://github.com/rainbowcake/rainbowcake-templates#screen-template) for the architecture can generate both styles for you._
 
 For now, we'll look at a simple screen that loads a user profile, displaying a username and profile image. Here's the sealed class representing our view state:
 
