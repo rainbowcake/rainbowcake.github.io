@@ -3,6 +3,8 @@ title = "ViewModel DI"
 weight = 10
 +++
 
+<div class="small-subtitle">rainbowcake-dagger</div>
+
 ### One Factory to rule them all
 
 `ViewModel`s can't be directly instantiated, as we need the framework to take care of their lifecycle aspect. The way to give a `ViewModel` a custom constructor is by using a custom `ViewModelProvider.Factory`. These factories look something like this, they receive the ViewModel class as a parameter when they need to instantiate one:

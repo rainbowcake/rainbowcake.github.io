@@ -3,7 +3,7 @@ title = "ViewModel DI"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbowcake-core</div>
+<div class="small-subtitle">rainbowcake-dagger</div>
 
 ViewModels are injected into Fragments via Dagger. For the injection mechanism to know about a given ViewModel, it has to be declared in a Dagger module, conventionally named `ViewModelModule`:
 
