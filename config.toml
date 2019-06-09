@@ -26,14 +26,14 @@ home = [ "HTML", "JSON" ]
 
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-gitlab'></i> GitLab repo"
-url = "https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake"
+name = "<i class='fab fa-github'></i> GitHub repo"
+url = "https://github.com/rainbowcake/rainbowcake"
 weight = 10
 
 [[menu.shortcuts]]
-name = "<i class='fab fa-gitlab'></i> Android Studio Templates"
+name = "<i class='fab fa-github'></i> Android Studio Templates"
 weight = 20
-url = "https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake-templates"
+url = "https://github.com/rainbowcake/rainbowcake-templates"
 
 [[menu.shortcuts]]
 name = "<i class='fab fa-gitlab'></i> Sample apps"
