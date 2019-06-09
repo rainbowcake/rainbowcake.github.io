@@ -16,4 +16,4 @@ The development of RainbowCake started within [AutSoft](https://autsoft.hu/en), 
 
 ### Where's the source code? How can I contribute? Where do I open issues?
 
-External contributors will soon™ be able to participate in the project on GitHub.
+Some things are still being worked out, but you can start participating in the project [on GitHub](https://github.com/rainbowcake)!
