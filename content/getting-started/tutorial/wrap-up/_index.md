@@ -5,7 +5,7 @@ weight = 60
 
 This is where we'll end the basic example of the architecture for now. The data sources that we didn't look at may be implemented in any way, using any libraries, as long as they have interfaces that only use domain objects as their parameter and return types.
 
-A simple example you can check out for these layers is the [NYTimes demo](https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake-nytimes), which uses Room for storage and Retrofit/Moshi with a suspending coroutine adapter for network access.
+A simple example you can check out for these layers is the (sadly non-public) [NYTimes demo](https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake-nytimes), which uses Room for storage and Retrofit/Moshi with a suspending coroutine adapter for network access.
 
 ---
 

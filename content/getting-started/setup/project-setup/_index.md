@@ -3,13 +3,13 @@ title = "Project setup"
 weight = 20
 +++
 
-The [Blank](https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/demos/blank) demo project is a great way to start a fresh project built on *RainbowCake*. If you don't wish to use this starter project, here's what you need to set up.
+The [Blank](https://github.com/rainbowcake/sample-blank) demo project (or its [Koin variant](https://github.com/rainbowcake/sample-blank-koin)) is a great way to start a fresh project built on *RainbowCake*. If you don't wish to use this starter project, here's what you need to set up.
 
 ### Screen one
 
-You'll need a `ui` package that will contain your various screens. Having this specific name is required by the [screen template](https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/rainbow-cake-templates#screen-template) which is the recommended way of creating new screens. After installing the template, create your first screen by invoking `New -> Other -> RainbowCake Screen` on the `ui` package, and following the steps.
+You'll need a `ui` package that will contain your various screens. Having this specific name is required by the [screen template](https://github.com/rainbowcake/rainbowcake-templates#screen-template) which is the recommended way of creating new screens. After installing the template, create your first screen by invoking `New -> Other -> RainbowCake Screen` on the `ui` package, and following the steps.
 
-Alternatively, see the [`ui/blank` package](https://gitlab.autsoft.hu/AutSoft/AndroidChapter/rainbow-cake/demos/blank/tree/master/app/src/main/java/com/example/blank/ui/blank) of the Blank project for the pieces of an empty screen setup.
+Alternatively, see the [`ui/blank` package](https://github.com/rainbowcake/sample-blank/tree/master/app/src/main/java/com/example/blank/ui/blank) of the Blank project for the pieces of an empty screen setup.
 
 ### Dependency injection
 
