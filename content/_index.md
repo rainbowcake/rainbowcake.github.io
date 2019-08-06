@@ -10,7 +10,7 @@ weight = 0
 
 ### Introduction
 
-This is the documentation of the *RainbowCake* architecture concept for Android application. *RainbowCake* relies heavily on Kotlin languages features and the Google Jetpack libraries.
+This is the documentation of the *RainbowCake* architecture concept for Android applications. *RainbowCake* relies heavily on Kotlin languages features and the Google Jetpack libraries.
 
 The main goals of this architecture:
 
