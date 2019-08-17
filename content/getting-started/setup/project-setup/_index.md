@@ -42,7 +42,7 @@ You'll need the following three pieces of code in place for your basic DI setup.
     interface AppComponent : RainbowCakeComponent
     ```
 
-- Finally, an Application class that extends `RainbowCakeApplication`. This will override the `injector` property with the type of the concrete Dagger component that will be used in the application, in this example, `AppComponent`. The `setupInjector` method also needs to be overridden appropriately - it should create an assign an instance of the component:
+- Finally, an Application class that extends `RainbowCakeApplication`. This will override the `injector` property with the type of the concrete Dagger component that will be used in the application, in this example, `AppComponent`. The `setupInjector` method also needs to be overridden appropriately - it should create and assign an instance of the component:
 
     ```kotlin
     class MyApplication : RainbowCakeApplication() {
