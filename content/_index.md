@@ -35,4 +35,4 @@ A brief description of the architecture's layers, for a start:
 
 ### A grain of salt
 
-This architecture concept and this documentation isn't gospel. What's being described here is the full capabilities of the architecture and some design recommendations that are known to work well with it. If your specific application's needs require you to deviate from this, please do. Read more [here](/theory/simplification/).
+This architecture concept and this documentation isn't gospel. What's being described here is the full capabilities of the architecture and some design recommendations that are known to work well with it. If your specific application's needs require you to deviate from this, please do. Read more [here](/best-practices/simplification/).
