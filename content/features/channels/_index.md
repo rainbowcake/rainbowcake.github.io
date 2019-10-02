@@ -101,7 +101,7 @@ If this activation and shutdown has significant costs in a specific use case, th
 
 ```kotlin
 fun startLocationUpdates() = executeNonBlocking {
-    if (isObserving("location")) {
+    if (isObserving("location_key")) {
         return@executeNonBlocking
     }
     val updates = locationPresenter.getLocationUpdates()
