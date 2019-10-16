@@ -4,7 +4,7 @@ weight = 0
 +++
 
 # RainbowCake
-#### _<p align="center">A modern Android architecture</p>_
+#### _<p align="center">A modern Android architecture framework</p>_
 
 <br/>
 
@@ -12,14 +12,15 @@ weight = 0
 
 This is the documentation of the *RainbowCake* architecture concept for Android applications. *RainbowCake* relies heavily on Kotlin languages features and the Google Jetpack libraries.
 
+Just like Jetpack - which it essentially extends - *RainbowCake* is both a set of dependencies that contain classes and other constructs to use in your applications, and guidance on how these applications should be implemented.
+
 The main goals of this architecture:
 
 - Clearly separate concerns between different layers and components,
 - Always keep views in a safe and consistent state with ViewModels,
 - Handle configuration changes (and even process death) gracefully,
 - Make offloading work to background threads trivial,
-- Provide Fragment-based navigation with argument 
-passing between screens in a single Activity.
+- Provide Fragment-based navigation with argument passing between screens in a single Activity.
 
 ### Overview
 
@@ -35,4 +36,4 @@ A brief description of the architecture's layers, for a start:
 
 ### A grain of salt
 
-This architecture concept and this documentation isn't gospel. What's being described here is the full capabilities of the architecture and some design recommendations that are known to work well with it. If your specific application's needs require you to deviate from this, please do. Read more [here](/best-practices/simplification/).
+This architecture concept and this documentation isn't gospel. What's being described here is the full capabilities of the architecture and some design recommendations that are known to work well with it. If your specific application's needs require you to deviate from this, please do - this is encouraged. Read more [here](/best-practices/simplification/).

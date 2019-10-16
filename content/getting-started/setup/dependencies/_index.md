@@ -3,7 +3,7 @@ title = "Dependencies"
 weight = 10
 +++
 
-The framework is available in multiple artifacts - four, for now. This lets you pick and choose the features that you need in your project instead of having to pull in everything at once.
+The framework is available in several artifacts. This lets you pick and choose the features that you need in your project instead of having to pull in everything at once.
 
 The currently available artifacts are listed below - you can get them all from MavenCentral.
 
@@ -19,7 +19,7 @@ repositories {
 implementation "co.zsmb:rainbow-cake-core:0.4.1"
 ```
 
-The essentials of the architecture library: the view state mechanisms and the configuration entry points. This dependency is required to use RainbowCake. You will also need to include at least one of the dependency injection artifacts below.
+The essentials of the architecture library: the view state mechanisms and the configuration entry points. **This dependency is required** to use RainbowCake. You will also need to include at least one of the dependency injection artifacts below.
 
 #### Dagger support
 
@@ -43,7 +43,7 @@ A new, alternative dependency injection solution, powered by Koin 2.0. For detai
 implementation "co.zsmb:rainbow-cake-navigation:0.4.1"
 ```
 
-All the navigation and argument handling features. `navigator`, `SimpleNavActivity`, and more.
+Navigation and argument handling features. `navigator`, `SimpleNavActivity`, and more. (If you're using a solution such as the [Navigation component](https://developer.android.com/guide/navigation/navigation-getting-started), you don't need this.)
 
 #### Channels addon
 
