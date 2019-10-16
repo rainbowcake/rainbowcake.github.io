@@ -69,7 +69,7 @@ class UserFragment : RainbowCakeFragment<UserViewState, UserViewModel>() {
 
 Note the use of the `exhaustive` extension property. This no-op property forces our `when` clause to be exhaustive, so that we are forced to handle all possible states of our screen. This is made possible by using a [sealed class](https://kotlinlang.org/docs/reference/sealed-classes.html) for our view state.
 
-In order to move from the `Loading` to the `UserLoaded` state, our Fragment has to call the ViewModel's `loadUser` method at some point. There are [multiple good choices for doing this](/features/viewmodels/#data-fetch-choices), one of them is in the `onStart` method:
+In order to move from the `Loading` to the `UserLoaded` state, our Fragment has to call the ViewModel's `loadUser` method at some point. There are [multiple good choices for doing this](/features/viewmodel-init/), one of them is in the `onStart` method:
 
 ```kotlin
 class UserFragment : RainbowCakeFragment<UserViewState, UserViewModel>() {

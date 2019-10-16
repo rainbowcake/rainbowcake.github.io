@@ -26,4 +26,4 @@ abstract class ViewModelModule {
 
 Each binding requires an abstract function that takes the given specific ViewModel as a parameter, and is annotated with `@ViewModelKey`, with the same ViewModel class specified in the annotation as the key. Their return type always has to be the base `ViewModel` type.
 
-To learn more about this setup, see the [implementation details](/implementation/viewmodels/).
+To learn more about this setup, see the [implementation details](/implementation/viewmodel-di/).
