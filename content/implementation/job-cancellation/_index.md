@@ -30,7 +30,7 @@ override fun onCleared() {
 }
 ```
 
-Cancelling the `rootJob` will also cancel all of its child coroutines, which in this case is every coroutine launched with the `execute` method. Note that coroutine cancellation is cooperative. Blocking code running inside the coroutine will not be cancelled. Cancellation can only happen in suspending functions, and only if it's handled explicitly. An example of this can be found in the "Retrofit and coroutine adapters" section below.
+Cancelling the `rootJob` will also cancel all of its child coroutines, which in this case is every coroutine launched with the `execute` method. Note that coroutine cancellation is cooperative. Blocking code running inside the coroutine will not be cancelled. Cancellation can only happen in suspending functions, and only if it's handled explicitly. [Retrofit's coroutine integration](/best-practices/retrofit-and-coroutines/) is a good example of this.
 
 ### References
 
