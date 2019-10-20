@@ -18,6 +18,7 @@ abstract class JobViewModel<VS : Any>(initialState: VS)
 ```
 
 The context of the scope is made up of two components: the UI dispatcher and a [`SupervisorJob`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-supervisor-job.html) instance that acts as the parent of all coroutines launched in the ViewModel.
+
 - `Dispatchers.UI` describes the `CoroutineDispatcher` element to use, in this case, the Android UI thread until the job is placed on another dispatcher (for example, with a `withContext` call).
 - `rootJob` provides the parent `Job` element for the coroutine. This is a simple, empty `Job`, only used to group the jobs launched inside a given ViewModel. The `rootJob` is cancelled  when the ViewModel's `onCleared` method is called - this is when the lifecycle it was attached to has terminated, meaning the `Activity`/`Fragment` is actually closed for good, and not just going through configuration changes.
 
