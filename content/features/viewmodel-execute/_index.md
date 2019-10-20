@@ -52,7 +52,7 @@ launch {
 }
 ```
 
-In the real implementation, you also get the option to disable this behaviour, and run multiple `execute` code freely in parallel. You just have to pass `false` for the `blocking` argument of the `execute` method:
+In the real implementation, you also get the option to disable this behaviour, and run multiple `execute` calls freely in parallel. You just have to pass `false` for the `blocking` argument of the `execute` method:
 
 ```kotlin
 execute(blocking = false) {
