@@ -3,7 +3,7 @@ title = "ViewModel DI"
 weight = 10
 +++
 
-<div class="small-subtitle">rainbowcake-dagger</div>
+<div class="small-subtitle">rainbow-cake-dagger</div>
 
 ### One Factory to rule them all
 

@@ -3,7 +3,7 @@ title = "View state"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbowcake-core</div>
+<div class="small-subtitle">rainbow-cake-core</div>
 
 ###  Sealed class view states
 

@@ -3,7 +3,7 @@ title = "ViewModel initialization"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbowcake-core</div>
+<div class="small-subtitle">rainbow-cake-core</div>
 
 While ViewModels are able to hold their state through various configuration changes while the screen is still active, it still has to be decided when this state is loaded and reloaded. Here are two common options you may want to use:
 

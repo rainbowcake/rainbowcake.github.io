@@ -3,7 +3,7 @@ title = "Arguments"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbowcake-navigation</div>
+<div class="small-subtitle">rainbow-cake-navigation</div>
 
 Each screen should take relatively few and relatively simple arguments. This should usually be an ID of some sort, sometimes a boolean flag. The arguments will be passed in the Fragment's argument Bundle, which means they'll survive even process death (and do so automatically). Model objects should never be passed as arguments.
 

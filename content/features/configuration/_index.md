@@ -3,7 +3,7 @@ title = "Configuration"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbowcake-core</div>
+<div class="small-subtitle">rainbow-cake-core</div>
 
 The framework has a configuration DSL, which can be invoked in the `onCreate` method of your `Application` class.
 

@@ -3,7 +3,7 @@ title = "ViewModel scopes"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbowcake-core</div>
+<div class="small-subtitle">rainbow-cake-core</div>
 
 ViewModels by default are scoped to their Fragment, meaning a new instance is created for every new instance of the Fragment (barring configuration changes), and they are cleared when their Fragment is destroyed (as in their lifecycle completely ends).
 

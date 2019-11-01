@@ -3,7 +3,7 @@ title = "Koin support"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbowcake-koin</div>
+<div class="small-subtitle">rainbow-cake-koin</div>
 
 RainbowCake's primary dependency injection mechanism remains Dagger 2, as shown by every other page of this documentation that discusses DI. However, you may also choose to use Koin 2.0 for your dependency injection needs.
 

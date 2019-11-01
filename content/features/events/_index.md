@@ -3,7 +3,7 @@ title = "Events"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbowcake-core</div>
+<div class="small-subtitle">rainbow-cake-core</div>
 
 Sometimes lower layers might produce results that don't change the long-term, persistent UI state, but instead they should be propagated to the Fragment just once.
 

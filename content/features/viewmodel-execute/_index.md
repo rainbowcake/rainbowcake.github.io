@@ -3,7 +3,7 @@ title = "ViewModel execute"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbowcake-core</div>
+<div class="small-subtitle">rainbow-cake-core</div>
 
 The `execute` method from `JobViewModel` is used to launch a coroutine on the UI thread with the appropriate `CoroutineScope` in ViewModels.
 
