@@ -7,7 +7,7 @@ weight = 20
 
 ViewModels by default are scoped to their Fragment, meaning a new instance is created for every new instance of the Fragment (barring configuration changes), and they are cleared when their Fragment is destroyed (as in their lifecycle completely ends).
 
-There are use cases where it would make sense to share ViewModel instances between Fragments, and the `getViewModelFromFactory` method now provides an opportunity for this in the form of the optional `scope` parameter. 
+There are use cases where it would make sense to share ViewModel instances between Fragments, and the `getViewModelFromFactory` method provides an opportunity for this in the form of the optional `scope` parameter. 
 
 _Note that these ViewModel scopes only exist in terms of Fragment ViewModels, as Activity ViewModels are always scoped to their Activity._
 

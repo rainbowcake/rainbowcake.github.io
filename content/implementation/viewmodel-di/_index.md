@@ -68,38 +68,33 @@ Here's how these components are (roughly) connected:
 
 The code for `DaggerViewModelFactory` here is sample code that doesn't even quite compile, but I hope it gets the idea across. There's a couple more little things you need to take care of for this implementation to work in terms of generics, Kotlin-Java interop, and null handling. If you want to see the real, complete implementation, look at the `DaggerViewModelFactory` class of the framework.
 
-### Getting the Factory in place
+### Accessing the Factory
 
-We still need to get an instance of this `Factory` into our `Fragment`s so that we can fetch `ViewModel`s with its help. 
+We still need to get hold of an instance of this `Factory` in our `Fragment`s so that we can fetch `ViewModel`s with its help. More specifically, this will be done by the `getViewModelFromFactory` helper function that the Fragment will call into to get a `ViewModel`.
 
-We could add each of our `Fragment`s to our Dagger component as we're creating them, and inject them manually one by one, but this is tedious. It's a good idea to instead put the property that stores the `Factory` in the `RainbowCakeFragment` base class, but due to its type parameters, it practically can't be injected by Dagger. The workaround is to introduce another base class _above_ `RainbowCakeFragment` which is non-generic, and injects itself with the Factory:
-
-```kotlin
-abstract class InjectedFragment : Fragment() {
-
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        injector.inject(this)
-    }
-
-}
-``` 
-
-This is no longer painful to add to our Dagger component, as it only has to be done once, and it injects itself neatly via the relatively simple field injection mechanism.
-
-We could now fetch our `ViewModel` in our concrete `Fragment`s like this, and if it needs to be created, it will be created by Dagger somewhere in the `Factory`:
+First, the `Factory` is exposed by the app level Dagger component, `RainbowCakeComponent`:
 
 ```kotlin
-override fun provideViewModel(): ProfileViewModel {
-    return ViewModelProviders.of(this, viewModelFactory)
-                             .get(ProfileViewModel::class)
+interface RainbowCakeComponent {
+    fun viewModelFactory(): ViewModelProvider.Factory
 }
+```
+
+Then, in `getViewModelFromFactory`, we simply get a hold of the `RainbowCakeApplication` via the `Fragment`'s context, and grab the `Factory` from its component:
+
+```kotlin
+val viewModelFactory = (getContext()?.applicationContext as? RainbowCakeApplication)
+            ?.injector
+            ?.viewModelFactory()
+```
+
+We could now fetch our `ViewModel` in this method like this, and if it needs to be created, it will be created by Dagger somewhere in the `Factory`:
+
+```kotlin
+ViewModelProviders.of(this, viewModelFactory).get(VM::class.java)
 ``` 
 
-The `getViewModelFromFactory` method we actually use essentially performs this same call, with some extra handling for shared `ViewModel` scopes.
+The `getViewModelFromFactory` method performs essentially this same call, with some extra handling for shared `ViewModel` scopes.
 
 
 ### References
