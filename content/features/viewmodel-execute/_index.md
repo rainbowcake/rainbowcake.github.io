@@ -5,14 +5,14 @@ weight = 20
 
 <div class="small-subtitle">rainbow-cake-core</div>
 
-The `execute` method from `JobViewModel` is used to launch a coroutine on the UI thread with the appropriate `CoroutineScope` in ViewModels.
+The `execute` method from `RainbowCakeViewModel` is used to launch a coroutine on the UI thread with the appropriate `CoroutineScope` in ViewModels.
 
 A basic example of this:
 
 ```kotlin
 class UserViewModel @Inject constructor(
         private val userPresenter: UserPresenter
-) : JobViewModel<UserViewState>(Loading) {
+) : RainbowCakeViewModel<UserViewState>(Loading) {
     
     fun loadUser(id: String) = execute {
         // This code passed to `execute` is in a coroutine, and can call

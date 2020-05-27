@@ -82,7 +82,7 @@ Initially, when declaring the ViewModel, we can create a `CartViewState` with al
 ```kotlin
 class CartViewModel @Inject constructor(
         private val cartPresenter: CartPresenter
-) : JobViewModel<CartViewState>(CartViewState()) { /* ... */ }
+) : RainbowCakeViewModel<CartViewState>(CartViewState()) { /* ... */ }
 ```
 
 Later, we can load the cart items so that they are displayed on the screen. On the first load, the `canProceedToOrder` property won't have a set value anyway, so we can just create an entirely new ViewState to replace the old one. Here, we're again using the default `false` value of the property.

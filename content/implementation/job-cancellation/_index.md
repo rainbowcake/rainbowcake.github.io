@@ -6,8 +6,8 @@ weight = 10
 Internally, the `execute` method calls the `launch` coroutine builder to fire off a coroutine Job. The scope for these coroutines will be a `CoroutineScope` contained by the ViewModel.
 
 ```kotlin
-abstract class JobViewModel<VS : Any>(initialState: VS) 
-    : RainbowCakeViewModel<VS>(initialState) {
+abstract class RainbowCakeViewModel<VS : Any>(initialState: VS) 
+    : ViewModel<VS>(initialState) {
 
     private val coroutineScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
     

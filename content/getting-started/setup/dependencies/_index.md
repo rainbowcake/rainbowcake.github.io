@@ -69,4 +69,4 @@ Coroutine channel support in the form of - most notably - the `ChannelViewModel`
 implementation "co.zsmb:rainbow-cake-timber:0.7.0"
 ```
 
-You only need this artifact if you want the framework to log about its internal events (this is mostly just the exceptions caught by `JobViewModel`), and you want it to do so using Timber. For more details, see [Configuration](/features/configuration/).
+You only need this artifact if you want the framework to log about its internal events (this is mostly just the exceptions caught by `RainbowCakeViewModel`), and you want it to do so using Timber. For more details, see [Configuration](/features/configuration/).

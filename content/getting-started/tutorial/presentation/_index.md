@@ -29,12 +29,12 @@ As described in the [overview](/#overview), something important needs to happen 
 
 Instead of using coroutine primitives in our code arbitrarily, we'll use methods provided by the architecture. There are two dispatchers that the framework prescribes, the UI (a wrapper for [`Dispatchers.Main`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html)) and IO (a wrapper for [`Dispatchers.IO`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-i-o.html)) dispatchers.
 
-First, we'll always launch every task as a coroutine with the UI dispatcher from our ViewModel with the `execute` method defined in the `JobViewModel` base class. This extends the previously discussed `RainbowCakeViewModel`, and takes the same type parameter, the view state:
+First, we'll always launch every task as a coroutine with the UI dispatcher from our ViewModel with the `execute` method defined in the `RainbowCakeViewModel` base class:
 
 ```kotlin
 class UserViewModel @Inject constructor(
         private val userPresenter: UserPresenter
-): JobViewModel<UserViewState>(Loading) {
+): RainbowCakeViewModel<UserViewState>(Loading) {
 
     fun loadUser() = execute {
          // We set the Loading state while we're fetching data

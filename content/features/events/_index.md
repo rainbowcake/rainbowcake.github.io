@@ -16,7 +16,7 @@ These events are represented as the `OneShotEvent` type, and can be launched fro
 ```kotlin
 class DataViewModel @Inject constructor(
         private val dataPresenter: DataPresenter
-) : JobViewModel<DataViewState>(DataViewState()) {
+) : RainbowCakeViewModel<DataViewState>(DataViewState()) {
 
     object NavigateSuccessEvent : OneShotEvent
     class NavigateFailureEvent(val errorMessage: String) : OneShotEvent
