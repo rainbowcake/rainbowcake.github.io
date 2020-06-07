@@ -19,8 +19,7 @@ The main goals of this architecture:
 - Clearly separate concerns between different layers and components,
 - Always keep views in a safe and consistent state with ViewModels,
 - Handle configuration changes (and even process death) gracefully,
-- Make offloading work to background threads trivial,
-- Provide Fragment-based navigation with argument passing between screens in a single Activity.
+- Make offloading work to background threads trivial.
 
 ### Overview
 
