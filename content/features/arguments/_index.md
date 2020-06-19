@@ -7,7 +7,11 @@ weight = 20
 
 Each screen should take relatively few and relatively simple arguments. This should usually be an ID of some sort, sometimes a boolean flag. The arguments will be passed in the Fragment's argument Bundle, which means they'll survive even process death (and do so automatically). Model objects should never be passed as arguments.
 
-Every screen should be able to initialize itself from just these arguments alone, by pulling the data they have to actually display from the data sources (through the various layers). 
+Every screen should be able to initialize itself from just these arguments alone, by pulling the data they have to actually display from the data sources (through the various layers).
+
+>**Note:** *rainbow-cake-navigation* is an optional dependency of RainbowCake. Other navigation solutions can also be used in RainbowCake-based apps. These likely provide their own argument passing solutions.
+
+### Required arguments
 
 Fragments without arguments can simply be instantiated via their constructors, but Fragments with arguments will use factory methods. A method called `initArguments` by convention will read all argument Bundle arguments after the view has been created, but before it is initialized.
 

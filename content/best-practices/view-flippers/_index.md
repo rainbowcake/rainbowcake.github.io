@@ -75,7 +75,7 @@ There are two further improvements to be made to improve this usage of a `ViewFl
 
 The first of this concerns the layout XML. If the views of your states get complex, you'll end up with a single, long XML file to edit, which is hard to find your way around. Furthermore, only a `ViewFlipper`'s first child shows up in layout previews, which makes editing any of the other layouts very tedious.
 
-To combat this, it's recommended that any non-trivial layouts are extracted into separate files, and `include`d in the `ViewFlipper` instead:
+To combat this, it's recommended that any non-trivial layouts are extracted into separate files, and added with `include` tags in the `ViewFlipper` instead:
 
 ```xml
 <ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
@@ -117,3 +117,7 @@ override fun render(viewState: UserViewState) {
     }.exhaustive          
 }
 ```
+
+### Notes
+
+>For some more tips about rendering single view states, take a look at [Designing and Working with Single View States on Android](https://zsmb.co/designing-and-working-with-single-view-states-on-android/). 

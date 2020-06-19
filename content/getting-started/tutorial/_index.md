@@ -7,4 +7,4 @@ alwaysopen = true
 
 # Tutorial
 
-Basic theory and code examples showing you the essential usage patterns of the architecture.
+This is some basic theory and code examples showing you the essential usage patterns of the architecture.

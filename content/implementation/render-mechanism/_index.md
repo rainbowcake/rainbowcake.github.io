@@ -3,7 +3,7 @@ title = "Render mechanism"
 weight = 10
 +++
 
-The render mechanism is implemented in the `RainbowCakeViewModel` and `RainbowCakeFragment` classes. Here's the relevant part of `RainbowCakeViewModel`:
+The render mechanism is implemented in the `RainbowCakeViewModel` and `RainbowCakeFragment` classes. Here's the relevant part of `RainbowCakeViewModel` (simplified):
 
 ```kotlin
 abstract class RainbowCakeViewModel<VS : Any>(initialState: VS) : ViewModel() {
@@ -48,6 +48,8 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 Fragments have two lifecycles that could be used to observe the `LiveData` in the ViewModel.
 
+>For a more detailed discussion, read this recommended article about this topic: [Fragment Lifecycles in the Age of Jetpack](https://zsmb.co/fragment-lifecycles-in-the-age-of-jetpack/).
+
 #### Fragment lifecycle
 
 One of them is the lifecycle of the Fragment itself, which starts when the Fragment is created, and ends when it is destroyed. This starts with the `onCreate` method, and ends with `onDestroy`. To observe `LiveData` with this lifecycle, the observation would have to start in `onCreate`, and the Fragment instance itself would be passed in as a parameter.
@@ -60,9 +62,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
 }
 ``` 
 
-The issue with using this lifecycle is that a Fragment's view may be recreated any number of times during its lifetime, and we have to populate that new view with data again. However, our observer won't be triggered after the creation of a new view, as `LiveData` does not notify observers if the data they're observing hasn't changed. This would leave any new views uninitialized!
+The issue with using this lifecycle is that a Fragment's view may be recreated any number of times during its lifetime, and any new views have to be populated with data again. However, the observer won't be triggered after the creation of a new view, as `LiveData` does not notify observers if the data they're observing hasn't changed. This would leave any new views uninitialized!
 
-We could attempt to fix this by starting observation in the `onViewCreated` method instead, like so:
+You could attempt to fix this by starting observation in the `onViewCreated` method instead, like so:
 
 ```kotlin
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -72,11 +74,11 @@ override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 }
 ```
 
-Since we'd be creating a new `Observer` instance each time the Fragment gets a new view, each of them would be invoked at least once, therefore properly populating our view. However, if we use the Fragment itself as the `LifecycleOwner`, these observations will only be cleared up when the Fragment is destroyed. Until then, with every new view created, a new `Observer` will be attached to the `LiveData`, and when the state does change, all of them will be triggered one after another, running the `render` method multiple times. 
+Since you'd be creating a new `Observer` instance each time the Fragment gets a new view, each of them would be invoked at least once, therefore properly populating the view. However, if you use the Fragment itself as the `LifecycleOwner`, these observations will only be cleared up when the Fragment is destroyed. Until then, with every new view created, a new `Observer` will be attached to the `LiveData`, and when the state does change, all of them will be triggered one after another, running the `render` method multiple times. 
 
 #### View lifecycle
 
-This shorter lifecycle of the Fragment's view is also available to use with our observations. This can run its course multiple times over the lifecycle of a Fragment. It starts with `onCreateView`/`onViewCreated`, and it ends with `onDestroyView`. This is the lifecycle actually used to observe view state. We make the `observe` call in the `onViewCreated` method, but now use `viewLifecycleOwner` as its parameter. This owner's lifecycle will end in `onDestroyView`, automatically cleaning up the observation.
+This shorter lifecycle of the Fragment's view is also available to use with our observations. This can run its course multiple times over the lifecycle of a Fragment. It starts with `onCreateView`/`onViewCreated`, and it ends with `onDestroyView`. This is the lifecycle actually used to observe view state in RainbowCake. The `observe` call is made in the `onViewCreated` method, and uses `viewLifecycleOwner` as its first. This owner's lifecycle will end in `onDestroyView`, automatically cleaning up the observation.
 
 ```kotlin
 override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

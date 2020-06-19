@@ -1,13 +1,15 @@
 +++
-title = "ViewModel DI"
+title = "ViewModel DI with Dagger"
 weight = 10
 +++
 
 <div class="small-subtitle">rainbow-cake-dagger</div>
 
+>This page describes the setup used by the `rainbow-cake-dagger` artifact, an optional Dagger integration of RainbowCake.
+
 ### One Factory to rule them all
 
-`ViewModel`s can't be directly instantiated, as we need the framework to take care of their lifecycle aspect. The way to give a `ViewModel` a custom constructor is by using a custom `ViewModelProvider.Factory`. These factories look something like this, they receive the ViewModel class as a parameter when they need to instantiate one:
+`ViewModel`s can't be directly instantiated, as we need the framework to take care of their lifecycle management (to retain them across configuration changes). The way to give a `ViewModel` a custom constructor is by using a custom `ViewModelProvider.Factory`. These factories look something like this, they receive the ViewModel class as a parameter when they need to instantiate one:
 
 ```kotlin
 class MyViewModelFactory : ViewModelProvider.Factory {
@@ -91,7 +93,7 @@ val viewModelFactory = (getContext()?.applicationContext as? RainbowCakeApplicat
 We could now fetch our `ViewModel` in this method like this, and if it needs to be created, it will be created by Dagger somewhere in the `Factory`:
 
 ```kotlin
-ViewModelProviders.of(this, viewModelFactory).get(VM::class.java)
+ViewModelProvider(this, viewModelFactory).get(VM::class.java)
 ``` 
 
 The `getViewModelFromFactory` method performs essentially this same call, with some extra handling for shared `ViewModel` scopes.

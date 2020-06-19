@@ -5,7 +5,7 @@ weight = 20
 
 <div class="small-subtitle"><s>rainbow-cake-channels</s></div>
 
->**Note: the Channels artifact is now DEPRECATED, and it will be removed in future RainbowCake versions. To get continuous updates from lower layers, prefer using coroutine Flows.**
+>**Note: the Channels artifact is DEPRECATED, and will not be present in future RainbowCake versions. To get continuous updates from lower layers, prefer using coroutine Flows. This documentation is kept available as a reference of the implementation present in past releases.**
 
 The `ChannelViewModel` base class provides the ability to observe updates from channels in a safe and concise way, in addition to providing state handling and coroutine Job execution.
 

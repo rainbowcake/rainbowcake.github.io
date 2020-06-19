@@ -3,11 +3,14 @@ title = "ViewModel scopes"
 weight = 20
 +++
 
-<div class="small-subtitle">rainbow-cake-core</div>
+<div class="small-subtitle">rainbow-cake-dagger</div>
+<div class="small-subtitle">rainbow-cake-koin</div>
 
-ViewModels by default are scoped to their Fragment, meaning a new instance is created for every new instance of the Fragment (barring configuration changes), and they are cleared when their Fragment is destroyed (as in their lifecycle completely ends).
+ViewModels by default are scoped to their Fragment, meaning a new instance is created for every new instance of the Fragment (barring configuration changes), and they are cleared when their Fragment is destroyed without recreation.
 
-There are use cases where it would make sense to share ViewModel instances between Fragments, and the `getViewModelFromFactory` method provides an opportunity for this in the form of the optional `scope` parameter. 
+There are use cases where it would make sense to share ViewModel instances between Fragments. Both the Dagger 2 and Koin integrations of RainbowCake provide support for this in their `getViewModelFromFactory` methods, in the form of the optional `scope` parameter.
+
+>See the [Dependency Injection](/features/dependency-injection/) page for more details about these two integrations. 
 
 _Note that these ViewModel scopes only exist in terms of Fragment ViewModels, as Activity ViewModels are always scoped to their Activity._
 
@@ -59,7 +62,7 @@ A `key` may be provided to scope multiple separate instances of the same ViewMod
 override fun provideViewModel() = getViewModelFromFactory(scope = Activity("key"))
 ```
 
-If no `key` is provided, the ViewModel will essentially exist as a singleton within the single Activity of the application. This is the recommended way for creating singleton ViewModel instances, as opposed to having them managed by Dagger, which takes the control away from the `ViewModelProvider` API, and can lead to unexpected behaviour.
+If no `key` is provided, the ViewModel will essentially exist as a singleton within the single Activity of the application. This is the recommended way for creating singleton ViewModel instances, as opposed to having them managed by Dagger, which takes the control away from the `ViewModelProvider` API, and can lead to unexpected behaviour (consider coroutine cancellation in this case!).
 
 While not currently part of the architecture library, the following `typealias` may be used to make this intention more explicit: 
 

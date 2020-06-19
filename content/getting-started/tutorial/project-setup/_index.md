@@ -1,31 +1,35 @@
 +++
 title = "Project setup"
-weight = 20
+weight = 5
 +++
 
-The [Blank](https://github.com/rainbowcake/sample-blank) demo project (or its [Koin variant](https://github.com/rainbowcake/sample-blank-koin)) is a great way to start a fresh project built on *RainbowCake*. If you don't wish to use this starter project, here's what you need to set up.
+The [Blank](https://github.com/rainbowcake/sample-blank) demo project (or its [Koin variant](https://github.com/rainbowcake/sample-blank-koin)) is a great way to start a fresh project built on RainbowCake. If you choose to use one of these, you can skip this page of the tutorial!
+
+However, if you don't wish to use the starter projects, here's what you need to set up.
 
 ### Screen one
 
 You'll need a `ui` package that will contain your various screens. Having this specific name is required by the [screen template](https://github.com/rainbowcake/rainbowcake-templates#screen-template) which is the recommended way of creating new screens. After installing the template, create your first screen by invoking `New -> Other -> RainbowCake Screen` on the `ui` package, and following the steps.
 
+>**Note:** the screen templates are not currently up-to-date for Android Studio 4.
+
 Alternatively, see the [`ui/blank` package](https://github.com/rainbowcake/sample-blank/tree/master/app/src/main/java/com/example/blank/ui/blank) of the Blank project for the pieces of an empty screen setup.
 
 ### Dependency injection
 
-You'll need the following three pieces of code in place for your basic DI setup. These are usually placed in the `di` package.
+You'll need the following three pieces of code in place for your basic DI setup with Dagger. These are usually placed in the `di` package.
+
+> For a Koin powered setup, see the [Koin support](/features/koin-support/) page.
 
 - A module that binds at least one ViewModel. By convention, as long as there's just one module containing ViewModels, it's named `ViewModelModule`:
 
     ```kotlin
     @Module
     abstract class ViewModelModule {
-    
         @Binds
         @IntoMap
         @ViewModelKey(UserViewModel::class)
         abstract fun bindUserViewModel(userViewModel: UserViewModel): ViewModel
-    
     }
     ```
 

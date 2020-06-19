@@ -3,7 +3,7 @@ title = "Simplification opportunities"
 weight = 20
 +++
 
-Some aspects of the architecture will only be useful in large, complex application. In smaller, simpler projects they might become boring boilerplate that you can do without. You are, in fact, encouraged to cut a few corners here and there, and take just the parts of the architecture that you need.
+Some aspects of the architecture will only be useful in large, complex applications. In smaller, simpler projects they might become boring boilerplate that you can do without. You are, in fact, encouraged to cut a few corners here and there, and take just the parts of the architecture that you need.
 
 Here are some ways you might be able to simplify your application. 
 
@@ -31,7 +31,7 @@ There are two recommended ways of reducing the mapping work necessary:
 
 ### Skipping a layer
 
-When there's little formatting to perform before displaying your data, or your application has very little client side business logic, it might not make sense to build out all the layers described in the architecture. You might end up with methods in each layers just calling into the corresponding method in the next layer, and doing nothing else.
+When there's little formatting to perform before displaying your data, or your application has very little client side business logic, it might not make sense to build out all the layers described in the architecture. You might end up with methods in each layer just calling into the corresponding method in the next layer, and doing nothing else.
 
 There is a recommended shortcut to take, but feel free to come up with your own as well.
 

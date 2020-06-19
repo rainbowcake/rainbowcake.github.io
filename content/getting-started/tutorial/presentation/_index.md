@@ -29,7 +29,7 @@ As described in the [overview](/#overview), something important needs to happen 
 
 Instead of using coroutine primitives in our code arbitrarily, we'll use methods provided by the architecture. There are two dispatchers that the framework prescribes, the UI (a wrapper for [`Dispatchers.Main`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-main.html)) and IO (a wrapper for [`Dispatchers.IO`](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-dispatchers/-i-o.html)) dispatchers.
 
-First, we'll always launch every task as a coroutine with the UI dispatcher from our ViewModel with the `execute` method defined in the `RainbowCakeViewModel` base class:
+First, we'll always launch every task as a coroutine with the UI dispatcher from our ViewModel with the `execute` method defined in the `RainbowCakeViewModel` base class (read more about this method [here](/features/viewmodel-execute/)):
 
 ```kotlin
 class UserViewModel @Inject constructor(
@@ -51,7 +51,7 @@ class UserViewModel @Inject constructor(
 }
 ```
 
-In order for `getUser` to suspend the UI thread, we make a single switch from the UI dispatcher to the IO dispatcher when it's called. We'll do this in every public presenter method. The helper function provided by the architecture for this is the `withIOContext`  method. Any code inside it will be run on a background thread pool:
+In order for `getUser` to suspend the UI thread, we make a single switch from the UI dispatcher to the IO dispatcher when it's called. We'll do this in every public presenter method (as described in [Threading](/getting-started/tutorial/theory-threading/)). The helper function provided by the architecture for this is the `withIOContext`  method. Any code inside it will be run on a background thread pool:
 
 ```kotlin
 class UserPresenter @Inject constructor() {
@@ -69,6 +69,6 @@ class UserPresenter @Inject constructor() {
 
 Tasks launched via the `RainbowCakeViewModel`'s `execute` method survive configuration changes since they're tied to the ViewModel instance, which also survives said changes. This means that for example, a network request may be fired off for one instance of a Fragment, and it will continue execution even if the Fragment is recreated. Regardless of the Fragment's lifecycle changes, the result of the call will arrive in the ViewModel's view state, and whenever a Fragment instance binds to the ViewModel, it will receive the results to display. 
 
-View state storage is implemented behind the scenes using LiveData. This provides the benefit of no references being kept to inactive views by the lower layers. If a result arrives for a Fragment that no longer exists, by default it will be placed in the ViewModel, which is simply never observed by anyone, and is eventually garbage collected. This way, inactive UI elements are never updated.
+View state storage is implemented behind the scenes using `LiveData`. This provides the benefit of no references being kept to inactive views by the lower layers. If a result arrives for a Fragment that no longer exists, by default it will be placed in the ViewModel, which is simply never observed by anyone, and is eventually garbage collected. This way, inactive UI elements are never updated.
 
 There is, however, an even stronger [cancellation mechanism](/implementation/job-cancellation/) in place for tasks for which ignoring the result isn't enough, meaning they shouldn't even continue execution if their respective screen is closed. Every coroutine launched by `execute` calls will be cancelled if the ViewModel is cleared (its view is permanently destroyed). Lower level calls that want to be cancellable by this mechanism have to use suspending functions and support cooperative coroutine cancellation properly.

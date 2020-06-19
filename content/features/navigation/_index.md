@@ -5,6 +5,8 @@ weight = 20
 
 <div class="small-subtitle">rainbow-cake-navigation</div>
 
+>**Note:** `rainbow-cake-navigation` is an optional dependency of RainbowCake. Other navigation solutions can also be used in RainbowCake-based apps.
+
 Navigation is one of the few responsibilities of the single Activity that the application uses (and sometimes, the only one). Its layout is a single `FrameLayout` for Fragments to fill with content, and it implements a `Navigator` interface that performs the appropriate `FragmentManager` calls.
 
 ```kotlin

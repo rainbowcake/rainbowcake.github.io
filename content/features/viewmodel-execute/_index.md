@@ -18,13 +18,15 @@ class UserViewModel @Inject constructor(
         // This code passed to `execute` is in a coroutine, and can call
         // suspending methods of the Presenter. It can also update the viewState,
         // as it's on the UI thread at this level of the call stack.
-        viewState = UserLoaded(userPresenter.getUser(id))
+        
+        val user = userPresenter.getUser(id) // suspending call
+        viewState = UserLoaded(user)
     }
     
 }
 ```
 
-### Blocking by default
+### "Blocking" by default
 
 By default, only one `execute` call can be in progress for a given ViewModel at a time. This behaviour is present for situations where asynchronous work is to be performed based on user input, and the UI is supposed to wait for the result, in the sense that it shouldn't launch additional jobs while the async work is ongoing.
 
@@ -45,7 +47,7 @@ launch {
     busy = true
 
     try {
-        task()
+        task() // your coroutine block passed to execute
     } finally {
         busy = false
     }
@@ -95,7 +97,7 @@ Any exceptions that happen inside `execute` calls that aren't caught will be, by
 
 ```kotlin
 try {
-    task() // the lambda passed to `execute`
+    task()
 } catch (e: CancellationException) {
     log("Job cancelled exception:")
     log(e)
@@ -105,4 +107,4 @@ try {
 }
 ```
 
-This behaviour can be modified by changing the framework's configuration, as described [here](/features/configuration/).
+This behaviour can be modified by changing the framework's configuration, as described [here](/features/configuration/). It's recommended that you disable this catch-all clause at least in debug builds.

@@ -9,7 +9,7 @@ The architecture ships with a dedicated testing module, which supports unit test
 
 ### Presenter testing
 
-For Presenter tests, you can use the `PresenterTest` base class, which will replace the IO dispatcher used in Presenters with the test dispatcher, to make it execute anything scheduled on it immediately.
+For Presenter tests, you can use the `PresenterTest` base class, which will replace the IO dispatcher used in Presenters (backing `withIOContext`) with the test dispatcher, to make it execute anything scheduled on it immediately.
 
 ### ViewModel testing
 
@@ -27,6 +27,8 @@ vm.observeStateAndEvents { stateObserver, eventsObserver ->
 ```
 
 See the extensions on the `MockObserver` class for the currently available assertions. Note that you can also add your own assertion extensions on this class, as needed.
+
+>If you also use queued events, you can use an overload of `observeStateAndEvents` which provides three observers in the lambda passed to it, the third one being an observer for the queued events.
 
 ### All other tests
 

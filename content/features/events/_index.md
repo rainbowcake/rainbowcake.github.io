@@ -5,11 +5,17 @@ weight = 20
 
 <div class="small-subtitle">rainbow-cake-core</div>
 
+>For the ideas behind RainbowCake's event handling implementation, see [Thoughts about Event Handling on Android](https://zsmb.co/thoughts-about-event-handling-on-android/).
+
+
+>This event handling implementation is also covered in [Handling View State and Events with RainbowCake
+](https://zsmb.co/talks/#handling-view-state-and-events-with-rainbowcake).
+
 Sometimes lower layers might produce results that don't change the long-term, persistent UI state, but instead they should be propagated to the Fragment just once.
 
-For example, an error might have happened, and we want to produce a one-time toast message about it. We don't want this Toast to reappear every time we put the app in the background and then the foreground again, or every time we rotate the screen - as it would happen if we simply stored this as part of its view state and handled it in the `render` method.
+For example, an error might have happened, and you want to produce a one-time toast message about it. you don't want this Toast to reappear every time you put the app in the background and then the foreground again, or every time the screen is rotated - as it would happen if it was simply stored as part of its view state and handled in the `render` method.
 
-Navigation is another very frequent use case for these sort of events - we might do a bit of asynchronous processing based on user input (e.g. perform a save after a button click), and only when it's done do we want to proceed to navigate somewhere else. Again, we don't want this navigation to be triggered every time we arrive to this Fragment, so it can't just be a part of its view state.
+Navigation is another very frequent use case for these sort of events - you might do a bit of asynchronous processing based on user input (e.g. perform a save after a button click), and only when it's done proceed to navigate somewhere else. Again, you don't want this navigation to be triggered every time you arrive to this Fragment, so it can't just be a part of its view state.
 
 These events are represented as the `OneShotEvent` type, and can be launched from a ViewModel using the `RainbowCakeViewModel`'s `postEvent` method. If they have no parameter, they can be represented as a simple `object`. Otherwise, simple classes with the parameters declared in their constructor as properties are recommended (there's no real need for a data class' complexity and overhead here).
 
@@ -45,6 +51,8 @@ class DataFragment : RainbowCakeFragment<DataViewState, DataViewModel>() {
     }    
 }
 ```
+
+Any unhandled events in Fragments will be logged, if RainbowCake's logging is enabled (see [Configuration](/features/configuration/)).
 
 ### Active observer only events
 

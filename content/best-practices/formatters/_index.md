@@ -21,7 +21,6 @@ class MessagingPresenter @Inject constructor(
 The formatters themselves are free to depend on a `Context` or a `Resources` instance: 
 
 ```kotlin
-@Singleton
 class MessagingFormatter @Inject constructor(
         private val context: Context
 ) {
