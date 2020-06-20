@@ -31,7 +31,7 @@ A brief description of the architecture's layers, for a start:
 - **ViewModels** store the current state of the UI, handle UI related logic, and update the state based on results received from presenters. They start coroutines for every task they have to perform (triggered by input events), and forward calls to their presenters.
 - **Presenters** put work on background threads and use interactors (one or more) to access business logic. Then, they transform the results to screen-specific presentation models for the ViewModels to store as state.
 - **Interactors** contain the core business logic of the application. They aggregate and manipulate data and perform computations. They are not tied to a single screen, but instead group functionality by the major features of the application.
-- **Data sources** provide the interactors with data from various origins - local database and file system, network locations, key-value stores, system APIs, resources, etc. It's their responsibility to keep their stored data in a consistent state (i.e. not expose operations that can lead to inconsistency).
+- **Data sources** provide the interactors with data from various origins - local database and file system, network locations, key-value stores, system APIs, resources, etc. It's their responsibility to abstract away the underlying implementation from the domain layer, and to keep their stored data in a consistent state (i.e. not expose operations that can lead to inconsistency).
 
 ### A grain of salt
 
