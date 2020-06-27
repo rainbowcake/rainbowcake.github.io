@@ -22,3 +22,5 @@ However, you can also propagate the suspending nature of these calls down into t
 In general, we probably want to make all of our Interactor methods suspending if there's at least one Data source in the application that supports coroutines. This way, blocking data sources can block whatever background thread the call is currently on, and suspending data sources can move computations to their own dispatchers if and as they need to. 
 
 Note that a network data source can easily provide a suspending API [using Retrofit](/best-practices/retrofit-and-coroutines), and the same can be done with a local database [using Room](/best-practices/room-and-coroutines).
+
+Need to provide reactive data from lower layers? Consider using [Flows](/best-practices/flows/).
