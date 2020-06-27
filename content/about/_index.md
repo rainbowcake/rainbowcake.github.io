@@ -9,14 +9,7 @@ pre = "<b>4. </b>"
 
 ### Is RainbowCake production ready?
 
-**_RainbowCake_ is production ready!** The version number not being 1.0 at this point means the following:
-
-- Some of the API is still subject to change. However, these changes are expected to be very small, and there will always be a migration path provided, like with every other similar change so far.
-- The documentation is still missing for some niche, rarely used features.
-- There are no public samples for every feature of the framework yet.
-- The project hasn't been widely publicized, and its repositories haven't been prepared for the general public yet.
-
-Most importantly though, it has been in production for more than a year now, in several applications.
+**_RainbowCake_ is production ready!** It has been in production for nearly two years now, in several applications, in the hands of (at least) tens of thousands of users.
 
 ### Who's using RainbowCake?
 
@@ -29,4 +22,4 @@ There are also multiple non-public projects using RainbowCake, for example, the 
 
 ### Where's the source code? How can I contribute? Where do I open issues?
 
-Some of these things are still being worked out, but you can start participating in the project [on GitHub](https://github.com/rainbowcake)!
+You can take a look at the code and participate in the project [on GitHub](https://github.com/rainbowcake).
