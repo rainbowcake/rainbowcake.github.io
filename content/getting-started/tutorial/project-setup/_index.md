@@ -11,8 +11,6 @@ However, if you don't wish to use the starter projects, here's what you need to 
 
 You'll need a `ui` package that will contain your various screens. Having this specific name is required by the [screen template](https://github.com/rainbowcake/rainbowcake-templates#screen-template) which is the recommended way of creating new screens. After installing the template, create your first screen by invoking `New -> Other -> RainbowCake Screen` on the `ui` package, and following the steps.
 
->**Note:** the screen templates are not currently up-to-date for Android Studio 4.
-
 Alternatively, see the [`ui/blank` package](https://github.com/rainbowcake/sample-blank/tree/master/app/src/main/java/com/example/blank/ui/blank) of the Blank project for the pieces of an empty screen setup.
 
 ### Dependency injection
