@@ -16,7 +16,7 @@ repositories {
 #### Core library
 
 ```groovy
-implementation "co.zsmb:rainbow-cake-core:1.3.0"
+implementation "co.zsmb:rainbow-cake-core:1.4.0"
 ```
 
 The essentials of the architecture library: the view state mechanisms and the configuration entry points.
@@ -28,7 +28,7 @@ You will probably also want to include at least one of the dependency injection 
 #### Dagger support
 
 ```groovy
-implementation "co.zsmb:rainbow-cake-dagger:1.3.0"
+implementation "co.zsmb:rainbow-cake-dagger:1.4.0"
 ```
 
 The primary, recommended way of performing dependency injection when using RainbowCake, using Dagger 2. For details, see [Dagger support](/features/dagger-support/).
@@ -36,7 +36,7 @@ The primary, recommended way of performing dependency injection when using Rainb
 #### Koin support
 
 ```groovy
-implementation "co.zsmb:rainbow-cake-koin:1.3.0"
+implementation "co.zsmb:rainbow-cake-koin:1.4.0"
 ```
 
 An alternative dependency injection solution, powered by Koin 2.0. For details, see [Koin support](/features/koin-support/).
@@ -44,7 +44,7 @@ An alternative dependency injection solution, powered by Koin 2.0. For details, 
 #### Testing utilities
 
 ```groovy
-testImplementation "co.zsmb:rainbow-cake-test:1.3.0"
+testImplementation "co.zsmb:rainbow-cake-test:1.4.0"
 ```
 
 Testing helpers for RainbowCake projects. See the [Testing](/features/testing/) page for more details.
@@ -52,7 +52,7 @@ Testing helpers for RainbowCake projects. See the [Testing](/features/testing/) 
 #### Navigation addon
 
 ```groovy
-implementation "co.zsmb:rainbow-cake-navigation:1.3.0"
+implementation "co.zsmb:rainbow-cake-navigation:1.4.0"
 ```
 
 Navigation and argument handling features: `navigator`, `SimpleNavActivity`, and more. See [Navigation](/features/navigation/) for details.
@@ -72,7 +72,7 @@ Version `0.7.0` of RainbowCake was the last version that shipped with this Chann
 #### Timber addon
 
 ```groovy
-implementation "co.zsmb:rainbow-cake-timber:1.3.0"
+implementation "co.zsmb:rainbow-cake-timber:1.4.0"
 ```
 
 You only need this artifact if you want the framework to log about its internal events (exceptions caught by `RainbowCakeViewModel`, unhandled events), and you want it to do so using Timber. For more details, see [Configuration](/features/configuration/).
