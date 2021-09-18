@@ -11,6 +11,12 @@ The `rainbow-cake-dagger` artifact provides an easy way to get up and running us
 
 The setup instructions for the Dagger 2 support are described on the [Dagger support](/features/dagger-support/) page, while the [ViewModel DI with Dagger](/implementation/viewmodel-di-with-dagger/) page describes some of the underlying implementation details.
 
+### Dagger Hilt
+
+The `rainbow-cake-hilt` artifact provides an easy way to get up and running using Dagger 2. This is the assumed default solution for DI in RainbowCake, and you'll see that integration being used in many pages of this documentation.
+
+The setup instructions for the Dagger 2 support are described on the [Dagger support](/features/dagger-support/) page, while the [ViewModel DI with Dagger](/implementation/viewmodel-di-with-dagger/) page describes some of the underlying implementation details.
+
 ### Koin
 
 The [Koin](https://insert-koin.io/) support of the framework is provided in the `rainbow-cake-koin` module, and serves as a simple way of setting up RainbowCake projects with Koin. It's documented on its own separate page: [Koin support](/features/koin-support/).

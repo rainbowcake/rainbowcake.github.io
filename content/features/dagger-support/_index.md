@@ -9,8 +9,25 @@ Dagger 2 is RainbowCake's primary dependency injection solution, via the `rainbo
 
 **For a starter project that already has Dagger 2 set up for use with RainbowCake, check out [Blank](https://github.com/rainbowcake/sample-blank).**
 
->See the [Dependency Injection](/features/dependency-injection/) page for more details about dependency injection in RainbowCake in general. 
+> See the [Dependency Injection](/features/dependency-injection/) page for more details about dependency injection in RainbowCake in general. 
 
+> See the [Hilt Support](/features/hilt-support/) page if you're using Dagger with Hilt. 
+
+### Setup
+
+To get started with RainbowCake and Dagger, include the `rainbow-cake-dagger` artifact, as described in detail on the [Dependencies](/getting-started/dependencies/) page.
+
+You'll also have to include Dagger in your dependencies:
+
+```groovy
+// Dagger
+def dagger_version = '2.38.1'
+implementation "com.google.dagger:dagger:$dagger_version"
+kapt "com.google.dagger:dagger-compiler:$dagger_version"
+```
+
+> For the latest version see [the Dagger releases page](https://github.com/google/dagger/releases).
+ 
 ### Providing dependencies
 
 For the injection mechanism to know about your ViewModels, they have to be declared in a Dagger module, conventionally named `ViewModelModule`, and placed in a `di` package within the app's root package:
