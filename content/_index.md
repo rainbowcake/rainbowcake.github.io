@@ -12,6 +12,8 @@ weight = 0
 
 This is the documentation of the *RainbowCake* architecture concept for Android applications. *RainbowCake* relies heavily on Kotlin languages features and the Google Jetpack libraries.
 
+> **Note:** RainbowCake is stable and maintained, but it's a framework from 2019, so browse and use it with that in mind. You'll find a lot of the same ideas in Google's official [Guide to app architecture](https://developer.android.com/jetpack/guide) as well, which is updated more actively.
+
 Just like Jetpack - which it essentially extends - *RainbowCake* is both a set of dependencies that contain classes and other constructs to use in your applications, and guidance on how these applications should be implemented.
 
 The main goals of this architecture:
